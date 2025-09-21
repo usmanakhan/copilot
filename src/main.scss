@@ -1,0 +1,32 @@
+@import 'form';
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~swiper/swiper-bundle.css';
+@import 'typography';
+
+$primary: #0d6efd;
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #222;
+}
+.swiper {
+  width: 100%;
+  height: 400px;
+}
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //font-size: 2rem;
+  background: $primary;
+  color: #fff;
+}
+.header {
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+  background: $primary;
+}
+@mixin linearGradient($startColor, $endColor) {
+  background: linear-gradient(to right, $startColor, $endColor);
+}

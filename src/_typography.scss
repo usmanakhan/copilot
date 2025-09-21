@@ -1,0 +1,27 @@
+// Typography and font size helpers
+
+$font-sizes: 8px, 10px, 12px, 14px, 16px, 18px, 20px, 24px, 28px, 32px, 36px, 40px, 44px, 48px, 52px, 56px;
+
+// Generate font-size utility classes
+@each $size in $font-sizes {
+  .fs-#{$size} {
+    font-size: $size !important;
+  }
+}
+
+// Example typography helpers
+.text-bold {
+  font-weight: bold !important;
+}
+.text-italic {
+  font-style: italic !important;
+}
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+.text-capitalize {
+  text-transform: capitalize !important;
+}

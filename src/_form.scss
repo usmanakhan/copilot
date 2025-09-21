@@ -1,0 +1,51 @@
+// Custom styles for Contact Us form
+
+.contact-card {
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.12);
+  background: #fff;
+  padding: 2rem 1.5rem;
+}
+
+.contact-card .card-body {
+  background: linear-gradient(135deg, #e3f2fd 0%, #fff 100%);
+  border-radius: 1rem;
+}
+
+.contact-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card .form-label {
+  font-weight: 600;
+  color: #1976d2;
+}
+
+.contact-card .form-control {
+  border-radius: 0.75rem;
+  border: 1px solid #90caf9;
+  background: #f5faff;
+  transition: border-color 0.2s;
+}
+
+.contact-card .form-control:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 0.2rem rgba(25, 118, 210, 0.15);
+}
+
+.contact-card button[type="submit"] {
+  background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  border: none;
+  transition: background 0.2s;
+}
+
+.contact-card button[type="submit"]:hover {
+  background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+}
