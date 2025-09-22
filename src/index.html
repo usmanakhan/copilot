@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website with AI</title>
     <!-- Bootstrap CSS -->
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-    />
+    /> -->
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="main.css" /> -->
   </head>
   <body>
     <!-- Responsive Fixed-Top Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">AI Website</a>
+        <a class="navbar-brand" href="#">AI Websitedfsf</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -72,7 +72,7 @@
         <div class="col-lg-8">
           <div class="card shadow mb-4">
             <div class="card-body">
-              <h2 class="mb-3 text-primary">About Us</h2>
+              <h2 class="mb-3 text-primary pt-4">About Us</h2>
               <p class="fs-5 mb-3">
                 <strong>AI Innovations Ltd.</strong> is a leading technology company dedicated to delivering cutting-edge AI solutions for businesses and individuals. Our mission is to make artificial intelligence accessible, reliable, and impactful for everyone.
               </p>
@@ -90,7 +90,7 @@
       </div>
     </div>
     <div class="container py-5" id="device">
-      <h2 class="mb-4">Devices</h2>
+      <h2 class="mb-4 pt-4">Devices</h2>
       <div class="swiper device-swiper">
         <div class="swiper-wrapper">
           <!-- Card 1 (with Limited Offer badge) -->
@@ -206,13 +206,58 @@
         <div class="swiper-button-next"></div>
       </div>
     </div>
+
+    <!-- Tabs Section (Bootstrap) -->
+    <div class="container py-5" id="info-tabs">
+      <h2 class="mb-4 pt-4">More Information</h2>
+      <ul class="nav nav-tabs" id="infoTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">
+            Overview
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">
+            Features
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">
+            Pricing
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content p-4 border border-top-0 rounded-bottom bg-white" id="infoTabsContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+          <h4>Overview</h4>
+          <p>
+            This is a sample overview tab. Here you can provide a summary of your product or service, its purpose, and key benefits.
+          </p>
+        </div>
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+          <h4>Features</h4>
+          <ul>
+            <li>Feature One: Fast and reliable performance</li>
+            <li>Feature Two: Easy integration with existing systems</li>
+            <li>Feature Three: 24/7 customer support</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+          <h4>Pricing</h4>
+          <p>
+            Choose from flexible pricing plans to suit your needs. Contact us for a custom quote or more details.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <div class="container py-5 d-flex justify-content-center" id="contact">
       <div class="card contact-card shadow" style="max-width: 500px; width: 100%;">
         <div class="card-body">
-          <h2 class="mb-4 text-center">Contact Us</h2>
+          <h2 class="mb-4 text-center pt-4">Contact Us</h2>
           <form action="/action_page.php">
             <div class="mb-3">
-              <label for="fname" class="form-label">First name:</label>
+              <label class="form-label">First name:</label>
               <input type="text" class="form-control form-control-lg" id="fname" name="fname" value="John" />
             </div>
             <div class="mb-3">
@@ -231,14 +276,12 @@
               <button type="submit" class="btn btn-primary btn-lg">
                 Submit
               </button>
+              <p style="font-size: 24px; font-weight: bold;">This is not a heading</p>
             </div>
           </form>
         </div>
       </div>
     </div>
-    
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script type="module" src="main.js"></script>
   </body>

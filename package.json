@@ -7,24 +7,30 @@
   "author": "Usman Ali",
   "scripts": {
     "build": "webpack",
-    "start": "webpack --watch"
+    "start": "webpack --watch",
+    "test": "vitest",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
     "@eslint/css": "^0.11.0",
     "@eslint/js": "^9.35.0",
+    "@playwright/test": "^1.55.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.35.0",
     "globals": "^16.4.0",
     "html-webpack-plugin": "^5.6.4",
-    "mini-css-extract-plugin": "^2.9.4",
-    "sass": "^1.93.0",
-    "sass-loader": "^16.0.5",
+    "jsdom": "^22.1.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "sass": "^1.69.7",
+    "sass-loader": "^13.3.2",
     "style-loader": "^4.0.0",
-    "webpack": "^5.101.3",
-    "webpack-cli": "^6.0.1"
+    "vitest": "^3.2.4",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "bootstrap": "^5.3.8",
+    "bootstrap": "^5.3.3",
+    "playwright": "^1.55.0",
     "swiper": "^12.0.2"
   }
 }

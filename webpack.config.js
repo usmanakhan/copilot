@@ -21,7 +21,7 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html', // source HTML file
+      template: './src/index.html', // source HTML file
       filename: 'index.html',   // output HTML file in dist
     }),
     new MiniCssExtractPlugin({
