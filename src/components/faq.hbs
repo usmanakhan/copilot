@@ -1,0 +1,87 @@
+{{!-- FAQ Page Component --}}
+<div class="container py-5" id="{{pageId}}">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold mb-3">{{title}}</h1>
+        <p class="lead text-muted">{{subtitle}}</p>
+      </div>
+
+      <!-- FAQ Search -->
+      <div class="search-box mb-5">
+        <div class="input-group input-group-lg">
+          <span class="input-group-text bg-white border-end-0">
+            <i class="fas fa-search text-muted"></i>
+          </span>
+          <input type="text" class="form-control border-start-0 ps-0" placeholder="Search FAQs..." id="faqSearch">
+        </div>
+      </div>
+
+      <!-- FAQ Categories -->
+      <div class="mb-4">
+        <ul class="nav nav-pills justify-content-center" id="faqCategories" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" data-category="all">All FAQs</button>
+          </li>
+          {{#each categories}}
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-category="{{id}}">{{name}}</button>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="accordion" id="faqAccordion">
+        {{#each faqs}}
+        <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-category="{{category}}">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#faq{{@index}}" 
+                    aria-expanded="false" 
+                    aria-controls="faq{{@index}}">
+              {{question}}
+            </button>
+          </h2>
+          <div id="faq{{@index}}" 
+               class="accordion-collapse collapse" 
+               data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              {{{answer}}}
+              {{#if helpful}}
+              <div class="mt-3 pt-3 border-top">
+                <small class="text-muted">Was this helpful?</small>
+                <div class="d-inline-block ms-2">
+                  <button class="btn btn-sm btn-outline-success me-1" data-feedback="yes">
+                    <i class="fas fa-thumbs-up"></i> Yes
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" data-feedback="no">
+                    <i class="fas fa-thumbs-down"></i> No
+                  </button>
+                </div>
+              </div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- Contact Support Section -->
+      <div class="text-center mt-5 p-4 bg-light rounded">
+        <h4>Still have questions?</h4>
+        <p class="text-muted mb-3">Can't find what you're looking for? Our support team is here to help.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <button class="btn btn-primary">
+            <i class="fas fa-envelope me-2"></i>Contact Support
+          </button>
+          <button class="btn btn-outline-primary">
+            <i class="fas fa-comments me-2"></i>Live Chat
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

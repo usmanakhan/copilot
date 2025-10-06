@@ -1,0 +1,30 @@
+<!-- Responsive Fixed-Top Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">{{brandName}}</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>       
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {{#each navItems}}
+        <li class="nav-item">
+          <a class="nav-link {{#if active}}active{{/if}}" 
+             {{#if active}}aria-current="page"{{/if}} 
+             href="{{href}}"
+             {{#if datePage}}data-page="{{datePage}}"{{/if}}>{{label}}</a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</nav>
+<div style="height: 70px"></div>

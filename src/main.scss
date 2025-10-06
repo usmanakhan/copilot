@@ -1,9 +1,115 @@
+// Define custom colors before importing Bootstrap
+$primary: #e00800;
+
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~swiper/swiper-bundle.css';
 @import 'form';
 @import 'typography';
 
-$primary: #0d6efd;
+// Add Font Awesome via CDN in the HTML or use a CDN link
+// For now, we'll add some icon fallbacks in CSS
+
+// Override Bootstrap colors
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.navbar-dark .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  
+  &:hover, &:focus {
+    color: #fff !important;
+  }
+  
+  &.active {
+    color: #fff !important;
+    font-weight: 600;
+  }
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+// Override Bootstrap button colors
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  
+  &:hover {
+    background-color: darken($primary, 10%);
+    border-color: darken($primary, 10%);
+  }
+  
+  &:focus, &.focus {
+    box-shadow: 0 0 0 0.2rem rgba(224, 8, 0, 0.25);
+  }
+  
+  &:active, &.active {
+    background-color: darken($primary, 15%);
+    border-color: darken($primary, 15%);
+  }
+}
+
+// Override outline-primary to use dark gray
+.btn-outline-primary {
+  color: #495057;
+  border-color: #495057;
+  
+  &:hover {
+    color: #fff;
+    background-color: #495057;
+    border-color: #495057;
+  }
+  
+  &:focus, &.focus {
+    box-shadow: 0 0 0 0.2rem rgba(73, 80, 87, 0.25);
+  }
+  
+  &:active, &.active, &.show {
+    color: #fff;
+    background-color: #495057;
+    border-color: #495057;
+  }
+  
+  &:disabled, &.disabled {
+    color: #495057;
+    background-color: transparent;
+  }
+}
+a{
+  color:$primary;
+}
+//override text-primary
+.text-primary {
+  color: $primary !important;
+  &.lighten {
+    color: lighten($primary, 20%) !important;
+  }
+}
+
+// Override nav-tabs active color
+.nav-tabs .nav-link {
+  color:#666666;
+}
+.nav-tabs .nav-link.active {
+  color: $primary;
+  border-color: #dee2e6 #dee2e6 #fff;
+  border-bottom-color: transparent;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: #e9ecef #e9ecef $primary;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #f8f9fa;
@@ -18,8 +124,8 @@ body {
   align-items: center;
   justify-content: center;
   //font-size: 2rem;
-  background: $primary;
-  color: #fff;
+  background: linear-gradient(135deg, #fdeae8 0%, #fff 100%);
+  color: #666666;
 }
 .header {
   text-align: center;
@@ -27,6 +133,36 @@ body {
   font-size: 2rem;
   background: $primary;
 }
+//pills override
+.nav-pills .nav-link {
+  color:$primary;
+  &.active {
+    background-color: lighten($primary, 25%);
+    color: #fff;
+  }
+}
+//.text-primary 
+
+// Accordion button customization
+.accordion-button {
+  &:not(.collapsed) {
+    background-color: #f8f9fa !important;
+    color: $primary !important;
+    border-color: #dee2e6;
+    box-shadow: none;
+  }
+  
+  &:focus {
+    background-color: #f8f9fa !important;
+    border-color: $primary;
+    box-shadow: 0 0 0 0.2rem rgba(224, 8, 0, 0.15) !important;
+  }
+  
+  &:hover {
+    background-color: #f1f3f4;
+  }
+}
+
 @mixin linearGradient($startColor, $endColor) {
   background: linear-gradient(to right, $startColor, $endColor);
 }

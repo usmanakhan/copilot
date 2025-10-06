@@ -1,0 +1,23 @@
+{{!-- filepath: src/templates/device-card.hbs --}}
+<div class="swiper-slide d-flex align-items-stretch">
+  <div class="card w-100 h-100 {{#if limitedOffer}}position-relative{{/if}} d-flex flex-column">
+    {{#if limitedOffer}}
+    <span class="badge bg-danger position-absolute top-0 start-50 translate-middle-x" style="z-index:2; transform: translate(-50%, -50%);">
+      Limited Offer
+    </span>
+    {{/if}}
+    <img src="{{image}}" class="card-img-top" alt="{{name}}">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">{{name}}</h5>
+      <ul class="list-unstyled mb-3">
+        {{#each features}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      <div class="mt-auto d-flex justify-content-between">
+        <a href="{{detailsLink}}" class="card-link">View Details</a>
+        <a href="{{buyLink}}" class="btn btn-primary">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</div>

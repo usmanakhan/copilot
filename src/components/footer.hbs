@@ -1,0 +1,81 @@
+{{!-- Footer Component --}}
+<footer class="bg-dark text-light py-5 mt-5">
+  <div class="container">
+    <div class="row">
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h5 class="text-white mb-3">{{companyName}}</h5>
+        <p class="mb-3">{{companyDescription}}</p>
+        <div class="d-flex gap-3">
+          {{#each socialLinks}}
+          <a href="{{url}}" class="text-light" target="_blank" rel="noopener">
+            <i class="{{icon}} fs-5"></i>
+          </a>
+          {{/each}}
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h6 class="text-white mb-3">Quick Links</h6>
+        <ul class="list-unstyled">
+          {{#each quickLinks}}
+          <li class="mb-2">
+            <a href="{{url}}" class="text-light text-decoration-none">{{name}}</a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h6 class="text-white mb-3">Products</h6>
+        <ul class="list-unstyled">
+          {{#each productLinks}}
+          <li class="mb-2">
+            <a href="{{url}}" class="text-light text-decoration-none">{{name}}</a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h6 class="text-white mb-3">Contact Info</h6>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>
+            {{address}}
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-phone text-primary me-2"></i>
+            <a href="tel:{{phone}}" class="text-light text-decoration-none">{{phone}}</a>
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-envelope text-primary me-2"></i>
+            <a href="mailto:{{email}}" class="text-light text-decoration-none">{{email}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-4">
+    
+    <!-- Copyright -->
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p class="mb-0 text-muted">&copy; {{currentYear}} {{companyName}}. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item">
+            <a href="#privacy" class="text-muted text-decoration-none">Privacy Policy</a>
+          </li>
+          <li class="list-inline-item ms-3">
+            <a href="#terms" class="text-muted text-decoration-none">Terms of Service</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

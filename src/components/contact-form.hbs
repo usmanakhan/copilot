@@ -1,0 +1,25 @@
+{{!-- filepath: src/templates/contact-form.hbs --}}
+<div class="container py-5 d-flex justify-content-center" id="contact">
+  <div class="card contact-card shadow" style="max-width: 500px; width: 100%;">
+    <div class="card-body">
+      <h2 class="mb-4 text-center pt-4">{{title}}</h2>
+      <form action="{{action}}">
+        {{#each fields}}
+        <div class="mb-3">
+          <label {{#if for}}for="{{for}}"{{/if}} class="form-label">{{label}}:</label>
+          {{#if (eq type 'textarea')}}
+          <textarea class="form-control form-control-lg" id="{{id}}" name="{{name}}" rows="{{rows}}" {{#if required}}required{{/if}}>{{value}}</textarea>
+          {{else}}
+          <input type="{{type}}" class="form-control form-control-lg" id="{{id}}" name="{{name}}" {{#if value}}value="{{value}}"{{/if}} {{#if required}}required{{/if}} />
+          {{/if}}
+        </div>
+        {{/each}}
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-lg">
+            {{submitText}}
+          </button>              
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
