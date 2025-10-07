@@ -115,6 +115,34 @@ body {
   background: #f8f9fa;
   color: #222;
 }
+
+// Language toggle utility classes
+.ltr-only { 
+  display: inline-block; 
+}
+
+.rtl-only { 
+  display: none; 
+}
+
+[dir="rtl"] {
+  .ltr-only { 
+    display: none !important; 
+  }
+  
+  .rtl-only { 
+    display: inline-block !important; 
+  }
+}
+
+// Bidirectional text utilities
+.text-bidi {
+  unicode-bidi: bidi-override;
+}
+
+.text-isolate {
+  unicode-bidi: isolate;
+}
 .swiper {
   width: 100%;
   height: 400px;
@@ -141,21 +169,24 @@ body {
     color: #fff;
   }
 }
-//.text-primary 
+//.list-unstyled
+.list-unstyled {
+  padding-inline-start: 0;
+}
 
 // Accordion button customization
 .accordion-button {
   &:not(.collapsed) {
-    background-color: #f8f9fa !important;
+    background-color: #efefef !important;
     color: $primary !important;
     border-color: #dee2e6;
     box-shadow: none;
   }
   
   &:focus {
-    background-color: #f8f9fa !important;
+    background-color: #efefef !important;
     border-color: $primary;
-    box-shadow: 0 0 0 0.2rem rgba(224, 8, 0, 0.15) !important;
+    box-shadow: 0 0 0 0.12rem rgba(224, 8, 0, 0.15) !important;
   }
   
   &:hover {
@@ -165,4 +196,121 @@ body {
 
 @mixin linearGradient($startColor, $endColor) {
   background: linear-gradient(to right, $startColor, $endColor);
+}
+
+// Arabic/RTL Language Support
+[dir="rtl"] {
+  // Text alignment adjustments
+  .text-start { text-align: right !important; }
+  .text-end { text-align: left !important; }
+  
+  // Margin and padding adjustments
+  .ms-auto { margin-left: 0 !important; margin-right: auto !important; }
+  .me-auto { margin-right: 0 !important; margin-left: auto !important; }
+  //.ms-2 { margin-left: 0 !important; margin-right: 0.5rem !important; }
+  .me-2 { margin-right: 0 !important; margin-left: 0.5rem !important; }
+  .ms-3 { margin-left: 0 !important; margin-right: 1rem !important; }
+  .me-3 { margin-right: 0 !important; margin-left: 1rem !important; }
+  
+  // Flexbox direction adjustments
+  .navbar-nav { flex-direction: row-reverse; }
+  
+  // Button and form adjustments
+  //.d-flex { flex-direction: row-reverse; }
+  .justify-content-between { 
+    flex-direction: row-reverse; 
+    .card-link { order: 2; }
+    .btn { order: 1; }
+  }
+  
+  // Navigation adjustments
+  .navbar-collapse {
+    .navbar-nav { 
+      margin-left: 0 !important; 
+      margin-right: auto !important; 
+    }
+  }
+  
+  // Contact form adjustments
+  .contact-card {
+    .form-label { text-align: right; }
+    .form-control { text-align: right; }
+  }
+  
+  // Footer adjustments
+  footer {
+    .text-md-end { text-align: left !important; }
+    .list-inline { justify-content: flex-start; }
+  }
+  
+  // Accordion and FAQ adjustments
+  .accordion-button {
+    text-align: right;
+    &::after {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+  
+  // Pills navigation
+  .nav-pills {
+   // flex-direction: row-reverse;
+  }
+  
+  // Social links
+  .d-flex.gap-3 {
+   // flex-direction: row-reverse;
+  }
+  
+  // Mission points and list alignment
+  .list-unstyled {
+    li {
+      text-align: right;
+      justify-content: flex-end;            
+    }
+  }
+  
+  // Arrow direction and spacing adjustments for RTL
+  .ltr-only {
+    display: none !important;
+  }
+  
+  .rtl-only {
+    display: inline-block !important;
+  }
+  
+  .fas.fa-arrow-left {
+    margin-left: 0.5rem;
+    margin-right: 0;
+  }
+  
+  .fas.fa-arrow-right {
+    display: none !important;
+  }
+}
+
+// Arabic font support
+html[lang="ar"], 
+html[lang="ar-SA"],
+html[lang="ar-EG"],
+html[lang="ar-AE"] {
+  font-family: 'Segoe UI', 'Tahoma', 'Arial', 'Helvetica Neue', sans-serif;
+  
+  body {
+    font-family: 'Segoe UI', 'Tahoma', 'Arial', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', 'Tahoma', 'Arial', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+  }
+  
+  .navbar-brand {
+    font-weight: 700;
+  }
+  
+  .btn {
+    font-weight: 500;
+  }
 }

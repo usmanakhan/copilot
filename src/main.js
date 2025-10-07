@@ -2,6 +2,7 @@
 import Handlebars from 'handlebars';
 import { loadNavigation, loadFooter } from './components/component-loader.js';
 import { PageRouter } from './components/page-router.js';
+import { LanguageSwitcher } from './components/language-switcher.js';
 
 // Register Handlebars helpers
 Handlebars.registerHelper('eq', function(a, b) {
@@ -97,6 +98,9 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     
     // Initialize page router (this will handle loading page-specific content)
     new PageRouter();
+    
+    // Initialize language switcher
+    new LanguageSwitcher();
     
     // Initialize swipers for home page content
     initSwipers();
